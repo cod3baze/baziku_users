@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import styles from "../styles/pages/Courses.module.css";
+import styles from "../../styles/pages/Courses.module.scss";
 
 export default function CoursesPage() {
   return (
