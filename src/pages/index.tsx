@@ -1,5 +1,6 @@
 import Head from "next/head";
 import NextLink from "next/link";
+import Router from "next/router";
 
 import { Form } from "../components/Form";
 import { FormButton } from "../components/Form/Button";
@@ -7,6 +8,10 @@ import { FormInput } from "../components/Form/Input";
 import styles from "../styles/pages/Auth.module.scss";
 
 export default function SignUp() {
+  const handleSubmit = () => {
+    Router.push("/courses");
+  };
+
   return (
     <>
       <Head>
@@ -21,7 +26,7 @@ export default function SignUp() {
             <h1>Entrar na plataforma</h1>
           </div>
 
-          <Form method="POST" onSubmit={() => {}}>
+          <Form method="POST" onSubmit={handleSubmit}>
             <FormInput
               placeholder="nome de usuário"
               label="Username"

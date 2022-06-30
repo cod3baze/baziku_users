@@ -1,5 +1,6 @@
 import Head from "next/head";
 
+import { Header } from "../../components/Header";
 import styles from "../../styles/pages/Courses.module.scss";
 
 export default function CoursesPage() {
@@ -12,7 +13,7 @@ export default function CoursesPage() {
       </Head>
 
       <div id={styles.coursesPage}>
-        <h1>eliasallex</h1>
+        <Header />
       </div>
     </>
   );

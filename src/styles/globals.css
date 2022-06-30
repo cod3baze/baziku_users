@@ -23,6 +23,7 @@
   --gray-300: #8d8d99;
   --gray-500: #323238;
   --gray-600: #29292e;
+  --gray-680: #202024;
   --gray-700: #121214;
   --gray-900: #09090a;
 
@@ -32,7 +33,7 @@
   --express: #835afd;
   --express-hover: #836afd;
 
-  --header-height: 5rem;
+  --header-height: 4.5rem;
   --max-coverall: 1120px;
 
   --baziku-small-shadows: 0 10px 20px rgba(0, 0, 0, 0.1),
