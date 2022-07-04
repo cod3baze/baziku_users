@@ -16,7 +16,7 @@ export default function CourseModule() {
       <div className={styles.courseModuleContainer}>
         <Header />
 
-        <main>
+        <div>
           <aside className={styles.asideInfo}>
             <div>
               <section className={styles.sectionHeader}>
@@ -75,7 +75,120 @@ export default function CourseModule() {
               </section>
             </div>
           </aside>
-        </main>
+
+          <main className={styles.mainContent}>
+            <div>
+              <div className={styles.chapter}>
+                {/* cinalização do chapter */}
+                <div className={styles.initial}>
+                  <div className={styles.circle} />
+                  <div className={styles.desc}>
+                    <h2>Chapter I</h2>
+                  </div>
+                </div>
+                {/* módulos */}
+                <div className={styles.module}>
+                  <div className={styles.circle} />
+                  <a href="h:/courses/node-js/chapter-i">
+                    <div>
+                      <img src="/assets/node-js.svg" alt="node course" />
+                      <div>
+                        <div>
+                          <h4>Fundamentos do NodeJS</h4>
+                          <span>em 7 aulas</span>
+                        </div>
+                        <p>
+                          Nesse módulos nós vamos conhecer os conceitos do
+                          Node.js, como é o seu funcionamento e os motivos pelo
+                          qual ele foi criado. Iremos estudar sobre os conceitos
+                          e regras por trás de uma API Rest, os métodos HTTPs,
+                          os principais códigos de retornos e tipos de
+                          parâmetros de uma requisição.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className={styles.module}>
+                  <div className={styles.circle} />
+                  <a href="h:/courses/node-js/chapter-i">
+                    <div>
+                      <img src="/assets/node-js.svg" alt="node course" />
+                      <div>
+                        <div>
+                          <h4>Fundamentos do NodeJS</h4>
+                          <span>em 7 aulas</span>
+                        </div>
+                        <p>
+                          Nesse módulos nós vamos conhecer os conceitos do
+                          Node.js, como é o seu funcionamento e os motivos pelo
+                          qual ele foi criado. Iremos estudar sobre os conceitos
+                          e regras por trás de uma API Rest, os métodos HTTPs,
+                          os principais códigos de retornos e tipos de
+                          parâmetros de uma requisição.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div className={styles.chapter}>
+                {/* cinalização do chapter */}
+                <div className={styles.initial}>
+                  <div className={styles.circle} />
+                  <div className={styles.desc}>
+                    <h2>Chapter II</h2>
+                  </div>
+                </div>
+                {/* módulos */}
+                <div className={styles.module}>
+                  <div className={styles.circle} />
+                  <a href="h:/courses/node-js/chapter-i">
+                    <div>
+                      <img src="/assets/node-js.svg" alt="node course" />
+                      <div>
+                        <div>
+                          <h4>Fundamentos do NodeJS</h4>
+                          <span>em 7 aulas</span>
+                        </div>
+                        <p>
+                          Nesse módulos nós vamos conhecer os conceitos do
+                          Node.js, como é o seu funcionamento e os motivos pelo
+                          qual ele foi criado. Iremos estudar sobre os conceitos
+                          e regras por trás de uma API Rest, os métodos HTTPs,
+                          os principais códigos de retornos e tipos de
+                          parâmetros de uma requisição.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className={styles.module}>
+                  <div className={styles.circle} />
+                  <a href="h:/courses/node-js/chapter-i">
+                    <div>
+                      <img src="/assets/node-js.svg" alt="node course" />
+                      <div>
+                        <div>
+                          <h4>Fundamentos do NodeJS</h4>
+                          <span>em 7 aulas</span>
+                        </div>
+                        <p>
+                          Nesse módulos nós vamos conhecer os conceitos do
+                          Node.js, como é o seu funcionamento e os motivos pelo
+                          qual ele foi criado. Iremos estudar sobre os conceitos
+                          e regras por trás de uma API Rest, os métodos HTTPs,
+                          os principais códigos de retornos e tipos de
+                          parâmetros de uma requisição.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
       </div>
     </>
   );
