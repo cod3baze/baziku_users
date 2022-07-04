@@ -1,2 +1,130 @@
 #coursesPage {
+  width: 100%;
+
+  .coverContent {
+    width: 100%;
+    max-width: var(--max-coverall);
+    margin: 0px auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    > main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .helloHeader {
+        display: flex;
+        align-items: center;
+
+        > div {
+          margin-left: 4rem;
+
+          p {
+            color: var(--gray-200);
+            line-height: 160%;
+            font-size: 1rem;
+          }
+
+          > p + p {
+            margin-top: 1.35em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.coursesBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  margin-top: 3rem;
+
+  > .section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+    gap: 2.2rem;
+
+    .course {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      gap: 2rem;
+      border-radius: 0.5rem;
+
+      background: var(--gray-680);
+      box-shadow: var(--panel-shadow);
+
+      > header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        div {
+          p {
+            color: var(--gray-200);
+            font-family: "Roboto", sans-serif;
+            line-height: 160%;
+            margin: 0px;
+            font-size: 1rem;
+            margin-top: 0.75em;
+          }
+        }
+      }
+      > main {
+        flex: 1 1 0%;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        color: var(--gray-200);
+
+        p {
+          color: var(--gray-200);
+          font-family: "Roboto", sans-serif;
+          line-height: 160%;
+          margin: 0px;
+        }
+      }
+      > footer {
+        gap: 1rem;
+        display: flex;
+        overflow: hidden;
+        margin-top: 1rem;
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          height: 4rem;
+          width: 100%;
+          padding: 0 0.875rem;
+          background-color: var(--gray-600);
+          color: var(--gray-100);
+          border: 1px solid transparent;
+          border-radius: 5px;
+          font-family: "Roboto", sans-serif;
+          font-size: 0.875rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background 0.2s ease 0s, box-shadow 0.2s ease 0s;
+
+          > span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            > span {
+              text-transform: uppercase;
+              margin-left: 0.8rem;
+              font: normal 500 1rem "Poppins", "Roboto", sans-serif;
+            }
+          }
+        }
+      }
+    }
+  }
 }
