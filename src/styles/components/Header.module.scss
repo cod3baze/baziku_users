@@ -1,43 +1,39 @@
-.headerContainer {
+.headerElement {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
   padding: 0px 30px;
   width: 100%;
   height: var(--header-height);
 
-  background: var(--gray-680);
+  background: transparent;
 
   transition: all 0.5s ease-in-out 0s;
-  box-shadow: rgb(18 18 20) 0px 1rem 1.25rem;
+  box-shadow: #f4f2f4 0px 1rem 1.25rem;
 
   > nav {
     display: flex;
+    align-items: center;
 
-    ul {
+    a {
       display: flex;
+      align-items: center;
 
-      li {
-        display: flex;
+      color: var(--express);
+
+      padding: 0 10px;
+
+      span {
+        margin-left: 10px;
       }
     }
 
-    .navigable {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 105px;
+    .logo {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
 
-      font: normal 500 1.2rem "Roboto", sans-serif;
-      transition: all 0.5s ease-in-out 0s;
-      border-bottom: 3px solid transparent;
-
-      &:hover {
-        border-bottom-color: var(--express-hover);
-        text-decoration: none;
-      }
-      &.active {
-        border-bottom-color: var(--express);
+      img {
+        width: 30px;
+        height: 30px;
       }
     }
   }

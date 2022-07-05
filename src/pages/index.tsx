@@ -8,7 +8,7 @@ export default function WelcomePage() {
   return (
     <>
       <Head>
-        <title>Welcome | Baziku platform</title>
+        <title>Welcome | Cognu Questions platform</title>
         <meta name="description" content="Baziku users courses" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
