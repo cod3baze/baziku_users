@@ -1,61 +1,111 @@
 import Head from "next/head";
-import NextLink from "next/link";
-import Router from "next/router";
+import Link from "next/link";
+import { Article, CaretRight, Sparkle, StackSimple } from "phosphor-react";
 
-import { Form } from "../components/Form";
-import { FormButton } from "../components/Form/Button";
-import { FormInput } from "../components/Form/Input";
-import styles from "../styles/pages/Auth.module.scss";
+import styles from "../styles/pages/Welcome.module.scss";
 
-export default function SignUp() {
-  const handleSubmit = () => {
-    Router.push("/courses");
-  };
-
+export default function WelcomePage() {
   return (
     <>
       <Head>
-        <title>SignUp | Baziku platform</title>
+        <title>Welcome | Baziku platform</title>
         <meta name="description" content="Baziku users courses" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div id={styles.authContainerPage}>
-        <main>
+      <div id={styles.welcomePage}>
+        <aside>
           <div>
-            <h1>Entrar na plataforma</h1>
+            <img
+              src="/assets/_incognu.svg"
+              alt="ilustração simbolizando perguntas e respostas"
+              draggable={false}
+            />
+
+            <h1>
+              Cognu <span>Question</span>
+            </h1>
           </div>
 
-          <Form method="POST" onSubmit={handleSubmit}>
-            <FormInput
-              placeholder="nome de usuário"
-              label="Username"
-              htmlFor="username"
-              id="username"
-              autoComplete="email"
-            />
-            <FormInput
-              placeholder="código de acesso"
-              spanLabel="esqueci a senha"
-              spanLabelHref="/reset_password"
-              label="Senha"
-              htmlFor="password"
-              id="password"
-              type="password"
-              autoComplete="current-password"
-            />
+          <p>Selecione um tópico para iniciar a avaliação do assunto!</p>
 
-            <FormButton isLoading={false} type="submit" text="Entrar" />
-          </Form>
+          <Link href="/produtos/genesis-system-bank-gs-bank" passHref>
+            <button className={styles.highlight} type="button">
+              <Sparkle size={24} weight="bold" color="#dedede" />
+              <span>em alta</span>
+            </button>
+          </Link>
+        </aside>
 
-          <footer>
-            <p>
-              Não tem uma conta?{" "}
-              <NextLink href="/session" passHref>
-                <a>Registre-se</a>
-              </NextLink>
-            </p>
-          </footer>
+        <main className={styles.mainSection}>
+          <div className={styles.mainContent}>
+            <div className={styles.seeMore}>
+              <Link href="/collections" passHref>
+                <a>
+                  <Article size={28} weight="light" color="#836afd" />
+                  <span>ver mais tópicos</span>
+                </a>
+              </Link>
+            </div>
+
+            <Link href="/" passHref>
+              <article className={styles.template}>
+                <section className="content">
+                  <header>
+                    <StackSimple size={64} weight="bold" color="#835afd" />
+                    <span>tech</span>
+                  </header>
+                  <h2>O que o Flutter faz em sua totalidade?</h2>
+                  <p>
+                    Questionamento da linguagem dart sobre o funcionamento do
+                    Flutter. assinale as opções corretas sobre o flutter na web!
+                  </p>
+                </section>
+
+                <footer>
+                  <CaretRight size={24} weight="light" />
+                </footer>
+              </article>
+            </Link>
+            <Link href="/" passHref>
+              <article className={styles.template}>
+                <section className="content">
+                  <header>
+                    <StackSimple size={64} weight="bold" color="#835afd" />
+                    <span>tech</span>
+                  </header>
+                  <h2>O que o Flutter faz em sua totalidade?</h2>
+                  <p>
+                    Questionamento da linguagem dart sobre o funcionamento do
+                    Flutter. assinale as opções corretas sobre o flutter na web!
+                  </p>
+                </section>
+
+                <footer>
+                  <CaretRight size={24} weight="light" />
+                </footer>
+              </article>
+            </Link>
+            <Link href="/" passHref>
+              <article className={styles.template}>
+                <section className="content">
+                  <header>
+                    <StackSimple size={64} weight="bold" color="#835afd" />
+                    <span>tech</span>
+                  </header>
+                  <h2>O que o Flutter faz em sua totalidade?</h2>
+                  <p>
+                    Questionamento da linguagem dart sobre o funcionamento do
+                    Flutter. assinale as opções corretas sobre o flutter na web!
+                  </p>
+                </section>
+
+                <footer>
+                  <CaretRight size={24} weight="light" />
+                </footer>
+              </article>
+            </Link>
+          </div>
         </main>
       </div>
     </>
