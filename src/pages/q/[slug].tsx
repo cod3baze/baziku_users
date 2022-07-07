@@ -1,5 +1,7 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { useCallback, useState } from "react";
+import toast from "react-hot-toast";
 
 import { Select } from "../../components/answers/Select";
 import { Option } from "../../components/answers/Select/Option";
@@ -12,6 +14,31 @@ interface QuestionVotePageProps {
 }
 
 export default function QuestionVotePage({ question }: QuestionVotePageProps) {
+  const [option, setOption] = useState<string>("");
+
+  const handleSelectOption = useCallback(
+    (optionId: string) => {
+      if (optionId === option) {
+        setOption("");
+      } else {
+        setOption(optionId);
+      }
+    },
+    [option]
+  );
+
+  async function handleSubmit() {
+    try {
+      toast.success("Questionamento enviado com sucesso!", {
+        duration: 5000,
+      });
+    } catch (error) {
+      toast.error("Erro ao enviar o questionamento :D", {
+        duration: 4000,
+      });
+    }
+  }
+
   return (
     <>
       <Head>
@@ -32,13 +59,37 @@ export default function QuestionVotePage({ question }: QuestionVotePageProps) {
 
             <div className={styles.answerActionContainer}>
               <Select>
-                <Option isSelected text="React JS" />
-                <Option text="Node" />
-                <Option isInactive text="Vue JS" />
-                <Option text="Pure HTML, CSS and JS" />
+                <Option
+                  text="React JS"
+                  isSelected={option === "a"}
+                  isInactive={option !== "" && option !== "a"}
+                  onSelect={() => handleSelectOption("a")}
+                />
+                <Option
+                  text="Node"
+                  isSelected={option === "b"}
+                  isInactive={option !== "" && option !== "b"}
+                  onSelect={() => handleSelectOption("b")}
+                />
+                <Option
+                  text="Vue JS"
+                  isSelected={option === "c"}
+                  isInactive={option !== "" && option !== "c"}
+                  onSelect={() => handleSelectOption("c")}
+                />
+                <Option
+                  text="Pure HTML, CSS and JS"
+                  isSelected={option === "d"}
+                  isInactive={option !== "" && option !== "d"}
+                  onSelect={() => handleSelectOption("d")}
+                />
               </Select>
 
-              <button className={styles.confirmButton} type="button">
+              <button
+                type="button"
+                className={styles.confirmButton}
+                onClick={handleSubmit}
+              >
                 confirmar
               </button>
             </div>
