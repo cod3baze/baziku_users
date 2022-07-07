@@ -1,0 +1,44 @@
+#selectElement {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.simpleOption {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+
+  // transition: all 0.1s ease-in-out 0.2s;
+
+  span {
+    font: normal 600 1.2rem "Inter", Arial, sans-serif;
+  }
+
+  &:hover {
+    border-color: var(--express);
+    color: var(--express-hover);
+  }
+
+  &.active {
+    border: 2px solid var(--express-stroke);
+    color: var(--font-primary);
+    background: #ebebfc;
+
+    span {
+      font: normal bold 1.5rem "Inter", Arial, sans-serif;
+    }
+  }
+
+  &.inactive {
+    span {
+      color: var(--gray-200);
+    }
+  }
+}

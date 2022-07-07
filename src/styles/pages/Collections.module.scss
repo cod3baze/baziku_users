@@ -1,0 +1,25 @@
+.collectionsPage {
+  display: flex;
+  flex-direction: column;
+
+  > section {
+    max-width: 870px;
+    margin: 70px 1rem;
+    margin-left: 6rem;
+
+    > div {
+      margin: 1rem 0.5rem;
+      h1 {
+        font: normal 600 3.3rem "Roboto", sans-serif;
+        max-width: 500px;
+      }
+    }
+
+    > main {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+  }
+}
