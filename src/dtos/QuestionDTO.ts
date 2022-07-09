@@ -13,20 +13,22 @@ type UserSelectingDTO = {
 
 export interface QuestionDTO {
   id: string;
+  owner_id: string;
   title: string;
   description: string;
   answer?: OptionDTO;
   category: Categories;
   options: OptionDTO[];
   users: UserSelectingDTO[];
-  expire_at: Date;
+  expire_at?: Date;
   created_at: Date;
 }
 
 export interface CreateQuestionDTO {
-  id: string;
   title: string;
   description: string;
   category: Categories;
+  options: OptionDTO[];
   answer?: OptionDTO;
+  expire_at?: Date;
 }
