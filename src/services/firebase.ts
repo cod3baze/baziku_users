@@ -1,5 +1,5 @@
-import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
+import database from "firebase/database";
 
 const firebaseConfig = {
   apiKey: process.env.APP_API_KEY,
@@ -13,6 +13,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
-export { app, analytics };
+export { app, database };
