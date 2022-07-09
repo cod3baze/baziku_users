@@ -1,0 +1,128 @@
+.composeQuestionPage {
+  > div {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 680px;
+    margin: 3rem 0.5rem;
+    margin-left: 80px;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    label {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.inputOptionsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  label {
+    + input {
+      margin-left: 0.5rem;
+    }
+  }
+
+  > section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    transition: all 0.2s;
+
+    div {
+      transition: all 0.2s;
+    }
+  }
+
+  .moreButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-top: 1rem;
+
+    transition: all 0.2s;
+    background: var(--green-500);
+    color: var(--white);
+
+    &:hover {
+      transform: scale(0.9);
+    }
+    &:active {
+      transform: scale(0.7);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-top: 2rem;
+
+  input {
+    height: 40px;
+    max-width: 470px;
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.4rem;
+    border: 2px solid transparent;
+
+    &:focus {
+      outline: 2px solid var(--express);
+    }
+  }
+
+  textarea {
+    height: 120px;
+    max-width: 670px;
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+    border: 2px solid transparent;
+
+    resize: vertical;
+
+    &:focus {
+      outline: 2px solid var(--express);
+    }
+  }
+
+  button.submitButton {
+    height: 44px;
+    width: 300px;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+
+    font: normal 500 1.3rem "Roboto", Sans-serif;
+    transition: all 0.2s;
+    background: var(--express);
+    color: var(--white);
+
+    &:hover {
+      background: var(--express-hover);
+    }
+  }
+}
+
+.flexGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
