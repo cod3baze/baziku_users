@@ -1,0 +1,30 @@
+.authenticationPage {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    > main {
+      margin-top: 7rem;
+
+      button {
+        height: 44px;
+        width: 200px;
+
+        border-radius: 0.6rem;
+        transition: all 0.2s ease-in-out 0s;
+        background: var(--orange-500);
+        color: var(--gray-680);
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+      }
+    }
+  }
+}

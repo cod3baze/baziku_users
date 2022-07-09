@@ -1,0 +1,29 @@
+.mePage {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    width: 100%;
+
+    > main {
+      max-width: 670px;
+      margin: 50px 70px;
+
+      header {
+        h2 {
+          font: normal bold 3rem "Roboto", sans-serif;
+        }
+      }
+
+      section {
+        margin-top: 4rem;
+
+        p {
+          span {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
