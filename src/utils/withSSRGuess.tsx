@@ -1,5 +1,3 @@
-// usada em páginas que só serão acessadas por visitantes
-
 import {
   GetServerSideProps,
   GetServerSidePropsContext,
@@ -7,6 +5,9 @@ import {
 } from "next";
 import { parseCookies } from "nookies";
 
+/**
+ * usada em páginas que só serão acessadas por visitantes
+ */
 export function withSSRGuest<P>(fn: GetServerSideProps<P>): GetServerSideProps {
   return async (
     ctx: GetServerSidePropsContext

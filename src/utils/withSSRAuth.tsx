@@ -1,5 +1,3 @@
-// usada em páginas que só serão acessadas por usuários logged
-
 import {
   GetServerSideProps,
   GetServerSidePropsContext,
@@ -9,6 +7,9 @@ import { destroyCookie, parseCookies } from "nookies";
 
 import { AuthTokenError } from "../errors/AuthTokenError";
 
+/**
+ * usada em páginas que só serão acessadas por usuários logged
+ */
 export function withSSRAuth<P>(fn: GetServerSideProps<P>): GetServerSideProps {
   return async (
     ctx: GetServerSidePropsContext

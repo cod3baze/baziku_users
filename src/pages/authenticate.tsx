@@ -1,9 +1,13 @@
 import Head from "next/head";
 
 import { Header } from "../components/Header";
+import { useAuthContext } from "../hooks/useAuthContext";
 import styles from "../styles/pages/Authenticate.module.scss";
+import { withSSRGuest } from "../utils/withSSRGuess";
 
 export default function Authenticate() {
+  const { signInWithGoogle } = useAuthContext();
+
   return (
     <>
       <Head>
@@ -17,10 +21,19 @@ export default function Authenticate() {
 
         <div>
           <main>
-            <button type="button">Authenticação</button>
+            <button onClick={signInWithGoogle} type="button">
+              Authenticação
+            </button>
           </main>
         </div>
       </div>
     </>
   );
 }
+
+// eslint-disable-next-line no-unused-vars
+export const getServerSideProps = withSSRGuest(async (_context) => {
+  return {
+    props: {},
+  };
+});
