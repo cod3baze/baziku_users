@@ -17,8 +17,9 @@ export function withSSRAuth<P>(fn: GetServerSideProps<P>): GetServerSideProps {
     try {
       const cookies = parseCookies(ctx);
       const token = cookies["@cognu_questions.token"];
+      const user = cookies["@cognu_questions.user"];
 
-      if (!token) {
+      if (!token && !user) {
         return {
           redirect: {
             destination: "/authenticate",
@@ -29,7 +30,7 @@ export function withSSRAuth<P>(fn: GetServerSideProps<P>): GetServerSideProps {
     } catch (err) {
       if (err instanceof AuthTokenError) {
         destroyCookie(ctx, "@cognu_questions.token");
-        destroyCookie(ctx, "@cognu_questions.refresh_token");
+        destroyCookie(ctx, "@cognu_questions.user");
 
         return {
           redirect: {

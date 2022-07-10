@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Article } from "phosphor-react";
+import { Article, SignOut } from "phosphor-react";
 
+import { useAuthContext } from "../hooks/useAuthContext";
 import styles from "../styles/components/Header.module.scss";
 
 export function Header() {
   const { asPath } = useRouter();
+  const { user, signOutOnGoogle } = useAuthContext();
 
   const isOnCollectionsPage = asPath === "/collections";
 
@@ -27,6 +29,15 @@ export function Header() {
           </Link>
         )}
       </nav>
+
+      {user?.token && (
+        <div className={styles.sessions}>
+          <button onClick={signOutOnGoogle} type="button">
+            <SignOut size={24} weight="bold" />
+            <span>Sair</span>
+          </button>
+        </div>
+      )}
     </header>
   );
 }

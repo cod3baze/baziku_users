@@ -1,5 +1,5 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { setCookie } from "nookies";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { destroyCookie, setCookie } from "nookies";
 import {
   createContext,
   ReactNode,
@@ -26,6 +26,7 @@ type AuthContextData = {
    * - after login, set user info on App Global State
    */
   signInWithGoogle(): Promise<void>;
+  signOutOnGoogle(): Promise<void>;
 };
 
 interface IAuthProvider {
@@ -84,10 +85,23 @@ export function AuthContextProvider({ children }: IAuthProvider) {
     }
   }, []);
 
+  const signOutOnGoogle = useCallback(async () => {
+    try {
+      await signOut(authGoogleAppContext);
+
+      destroyCookie(undefined, "@cognu_questions.token");
+      destroyCookie(undefined, "@cognu_questions.user");
+
+      setUser({} as UserGoogleAccount);
+    } catch (error) {
+      throw new Error(error);
+    }
+  }, []);
+
   // to avoid to many renders on state changes
   const authProviderValue = useMemo(
-    () => ({ user, signInWithGoogle }),
-    [user, signInWithGoogle]
+    () => ({ user, signInWithGoogle, signOutOnGoogle }),
+    [user, signInWithGoogle, signOutOnGoogle]
   );
 
   useEffect(() => {
@@ -112,7 +126,7 @@ export function AuthContextProvider({ children }: IAuthProvider) {
     );
 
     return () => AuthStateChangerUnsubscribe();
-  }, []);
+  }, [user]);
 
   return (
     <AuthContext.Provider value={authProviderValue}>

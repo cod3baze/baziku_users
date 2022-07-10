@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useEffect } from "react";
 
 import { Header } from "../components/Header";
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -7,6 +8,12 @@ import { withSSRGuest } from "../utils/withSSRGuess";
 
 export default function Authenticate() {
   const { signInWithGoogle } = useAuthContext();
+
+  const { user } = useAuthContext();
+
+  useEffect(() => {
+    console.log(`logged as ${user.email}`);
+  }, [user.email]);
 
   return (
     <>

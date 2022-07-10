@@ -1,9 +1,13 @@
 import Head from "next/head";
 
 import { Header } from "../../components/Header";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import styles from "../../styles/pages/me/Me.module.scss";
+import { withSSRAuth } from "../../utils/withSSRAuth";
 
 export default function Me() {
+  const { user } = useAuthContext();
+
   return (
     <>
       <Head>
@@ -18,8 +22,18 @@ export default function Me() {
         <div>
           <main>
             <header>
-              <h2>Elias alexandre</h2>
-              <strong>@eliasAllexandre</strong>
+              <div>
+                <img
+                  draggable={false}
+                  src={user?.avatar}
+                  alt={`${user?.name} avatar`}
+                />
+              </div>
+
+              <article>
+                <h2>{user?.name}</h2>
+                <strong>{user?.email}</strong>
+              </article>
             </header>
 
             <section>
@@ -34,3 +48,8 @@ export default function Me() {
     </>
   );
 }
+
+// eslint-disable-next-line no-unused-vars
+export const getServerSideProps = withSSRAuth(async (_ctx) => {
+  return { props: {} };
+});
